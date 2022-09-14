@@ -27,11 +27,3 @@ int largest_number(int a, int b, int c)
 
 	return (largest);
 }
-int main(void){
-	int a = 4;
-	int b = 5;
-	int c = 2;
-	largest_number(a, b, c);
-
-	return (0);
-}
