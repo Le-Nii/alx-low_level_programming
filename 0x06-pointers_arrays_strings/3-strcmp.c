@@ -1,24 +1,23 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include "main.h"
 /**
- * main - generates keygen.
- * Return: 0 Always.
+ * _strcmp - compares two strings
+ * @s1: first string.
+ * @s2: second string.
+ * Return: 0 if s1 and s2 are equals,
+ * another number if not.
  */
-int main(void)
-{
-	int r = 0, c = 0;
-	time_t t;
 
-	srand((unsigned int) time(&t));
-	while (c < 2772)
+int _strcmp(char *s1, char *s2)
+{
+	int i = 0, op = 0;
+
+	while (op == 0)
 	{
-		r = rand() % 128;
-		if ((c + r) > 2772)
+		if ((*(s1 + i) == '\0') && (*(s2 + i) == '\0'))
 			break;
-		c = c + r;
-		printf("%c", r);
+		op = *(s1 + i) - *(s2 + i);
+		i++;
 	}
-	printf("%c\n", (2772 - c));
-	return (0);
+
+	return (op);
 }
